@@ -29,9 +29,59 @@
                 <p>С 10 до 20, ежедневно</p>
                 <p><span>8 812 450-25-25</span></p>
             </div>
+            <div class="header-breadcrumbs">
+                <a href="#">Главная</a>
+                <a href="#">Каталог</a>
+                <a href="#">Сливочное</a>
+            </div>
         </header>
         <main>
-            
+            <h1>Сливочное мороженое</h1>
+            <form class="main-control_panel" name="control_panel" action="catalog.html" method="post">
+                <div class="selection">
+                    <p>Сортировка:</p>
+                    <div class="control_panel-container">
+                        <select name="sort">
+                            <option value="product-popularity">По популярности</option>
+                            <option value="price-up">Цена по возрастанию</option>
+                            <option value="price-down">Цена по убыванию</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="price">
+                    <p>Цена: 100 руб. – 500 руб.</p>
+                    <div class="control_panel-container">
+
+                    </div>
+                </div>
+                <div class="fat_content">
+                    <p>Жирность:</p>
+                    <div class="control_panel-container">
+                        <label><input type="radio" name="fat" value="0">0%</label>
+                        <label><input type="radio" name="fat" value="10">до 10%</label>
+                        <label><input type="radio" name="fat" value="30">до 30%</label>
+                        <label><input type="radio" name="fat" value="40">выше 30%</label>
+                    </div>
+                </div>
+                <div class="topping">
+                    <p>Наполнители:</p>
+                    <div class="control_panel-container">
+                        <label><input type="checkbox" name="chocolate">шоколадные</label>
+                        <label><input type="checkbox" name="sugar">сахарные присыпки</label>
+                        <label><input type="checkbox" name="fruit">фрукты</label>
+                        <label><input type="checkbox" name="syrup">сиропы</label>
+                        <label><input type="checkbox" name="jam">джемы</label>
+                    </div>
+                </div>
+                <button type="submit" name="catalog-filter" class="control_panel-btn">Применить</button>
+            </form>
+            <div class="main-product">
+                <div class="product-item">
+                    <img src="#" alt="image product">
+                    <p class="product-price">310<span>р</span>/кг</p>
+                    <a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+                </div>
+            </div>
         </main>
         <footer class="page-footer">
             <div class="social-buttons">
