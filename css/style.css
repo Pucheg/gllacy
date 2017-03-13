@@ -1,11 +1,16 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 .conteiner {
     width: auto;
-    padding-left: 2.23%;
-    padding-right: 2.23%;
+    padding-left: 2.3%;
+    padding-right: 2.3%;
+}
+.clearfix::after {
+    display: table;
+    content: "";
+    clear: both;
 }
 .nav {
     list-style: none;
@@ -15,19 +20,19 @@
     vertical-align: top;
 }
 .page-bg {
-    margin: 0 auto;
     width: auto;
     min-width: 900px;
     max-width: 1200px;
+    margin: 0 auto;
     background-color: #8a9c8f;
 }
 
 .page-header {
     position: relative;
+    width: auto;
+    min-height: 70px;
     margin: 0 2.23%;
     padding-top: 23px;
-    min-height: 70px;
-    width: auto;
     background-color: green;
 }
 .logo {
@@ -41,14 +46,14 @@
 }
 .page-menu {
     float: left;
-    margin-left: 200px;
     min-width: 390px;
+    margin-left: 178px;
     background-color: yellow;
 }
 .header-info_block {
     float: right;
-    text-align: right;
     min-width: 280px;
+    text-align: right;
     background-color: yellow;
 }
 .header-btn {
@@ -63,4 +68,35 @@
 }
 .main-promo {
     background-color: #e76a39;
+    margin-bottom: 40px;
+}
+.promo-items {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 48.83%;
+    min-width: 419px;
+    background-color: yellow;
+}
+.promo-items.left_item {
+    float: left;
+    margin-right: 20px;
+}
+.promo-items.right_item {
+    float: right;
+}
+.main-hits {
+    /*display: flex;*/
+    width: auto;
+    background-color: silver;
+}
+.hits-items {
+    display: inline-block;
+    width: 22.2%;
+    min-width: 200px;
+    min-height: 240px;
+    margin-right: 2.2%;
+    background-color: yellow;
+}
+.hits-items:last-child {
+    margin-right: 0;
 }
