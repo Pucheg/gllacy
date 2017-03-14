@@ -1,37 +1,45 @@
+/*COMMON STYLES*/
 * {
     margin: 0;
     padding: 0;
 }
 .conteiner {
     width: auto;
-    padding-left: 2.3%;
-    padding-right: 2.3%;
+    padding-left: 2.223%;
+    padding-right: 2.223%;
 }
 .clearfix::after {
     display: table;
     content: "";
+    width: 60%;
     clear: both;
 }
-.nav {
+.nav-menu,
+.inner-menu {
     list-style: none;
 }
-.nav li {
+.nav-menu > li {
     display: inline-block;
+    position: relative;
     vertical-align: top;
 }
+.inner-menu {
+    display: none;
+    position: absolute;
+}
 .page-bg {
+    box-sizing: border-box;
     width: auto;
     min-width: 900px;
     max-width: 1200px;
     margin: 0 auto;
     background-color: #8a9c8f;
 }
-
+/*HEADER*/
 .page-header {
     position: relative;
     width: auto;
     min-height: 70px;
-    margin: 0 2.23%;
     padding-top: 23px;
     background-color: green;
 }
@@ -44,7 +52,7 @@
     margin-right:25px;
     background-color: yellow;
 }
-.page-menu {
+.header-menu {
     float: left;
     min-width: 390px;
     margin-left: 178px;
@@ -59,19 +67,57 @@
 .header-btn {
     display: inline-block;
 }
+.header-breadcrumbs {
+    margin-top: 77px;
+    margin-right: auto;
+}
+/*MAIN*/
 .index-main {
     background-color: rgba(114, 208, 243, 0.3);
 }
-.main-slider {
+.index-slider {
     min-height: 530px;
     background-color: rgba(186, 100, 209, 0.5);
 }
-.main-promo {
+.catalog-filters {
+    width: 860px;
+    margin-bottom: 40px;
+    background-color: orange;
+}
+.filters-item {
+    float: left;
+    margin-right: 15px;
+    background-color: yellow;
+}
+.filters-container {
+    height: 36px;
+    vertical-align: center;
+    border-radius: 30px;
+    background-color: red;
+}
+.filters-sorting {
+    width: 195px;
+}
+.filters-price {
+    width: 220px;
+}
+.filters-fat {
+    width: 414px;
+    margin-right: 0;
+}
+.filters-topping {
+    width: 700px;
+}
+.filters-btn {
+    width: 145px;
+    box-sizing: border-box;
+    margin-right: 0;
+}
+.index-promo {
     background-color: #e76a39;
     margin-bottom: 40px;
 }
 .promo-items {
-    display: inline-block;
     box-sizing: border-box;
     width: 48.83%;
     min-width: 419px;
@@ -84,19 +130,123 @@
 .promo-items.right_item {
     float: right;
 }
-.main-hits {
-    /*display: flex;*/
+.products {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     width: auto;
-    background-color: silver;
+    margin-bottom: 40px;
+    background-color: blue;
 }
-.hits-items {
-    display: inline-block;
-    width: 22.2%;
+.products-items {
+    float: left;
+    width: 23.286%;
     min-width: 200px;
-    min-height: 240px;
-    margin-right: 2.2%;
+    min-height: 360px;
+    margin-right: 2.267%;
     background-color: yellow;
 }
-.hits-items:last-child {
+.products-items:nth-child(4n) {
     margin-right: 0;
+}
+.index-advantage {
+    width: auto;
+    padding: 25px 20px;
+    margin-bottom: 40px;
+    background-color: #e76a39;
+}
+.advantage-title {
+    margin-bottom: 15px;
+}
+.advantage-items {
+    width: 48.782%;
+    min-width: 400px;
+    background: yellow;
+}
+.advantage-item1 {
+    float: left;
+    margin-right: 20px;
+}
+.advantage-item2 {
+    float: right;
+}
+.index-news {
+    margin-bottom: 40px;
+    background-color: silver;
+}
+.news-items {
+    box-sizing: border-box;
+    width: 48.83%;
+    min-width: 419px;
+    min-height: 220px;
+    background-color: yellow;
+}
+.news-blog {
+    float: left;
+    margin-right: 20px;
+    padding: 26px 20px;
+}
+.news-mailing {
+    float: right;
+    padding: 38px 28px;
+}
+.index-location {
+    position: relative;
+    background-color: #e76a39;
+}
+.index-contacts {
+    display: block;
+    top: 65px;
+    right: 0;
+    position: absolute;
+    width: 300px;
+    height: 305px;
+    background-color: white;
+}
+.pop-up_feedback {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    width: 480px;
+    min-height: 440px;
+    background-color: white;
+}
+.switch-pages {
+    float: right;
+}
+.page-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 105px;
+    padding-bottom: 30px;
+    background-color: green;
+}
+.social-buttons {
+    float: left;
+    width: 200px;
+    margin-top: 35px;
+    margin-right: 16.667%;
+    background-color: yellow;
+}
+.social-btn {
+    display: inline-block;
+}
+.additional-info {
+    float: left;
+    width: 360px;
+    margin-top: 35px;
+    margin-right: 16.667%;
+    background-color: yellow;
+}
+.developers {
+    float: right;
+    width: 200px;
+    margin-top: 18px;
+    background-color: yellow;
 }
