@@ -30,19 +30,14 @@
                     </ul>
                 </nav>
                 <div class="header-info_block">
-                    <div class="header_search-btn header-btn">
-                        <a href="#">Поиск
-                            <form class="popup-search">
-                                <input type="text" name="search" value="">
-                            </form>
-                        </a>
-                    </div>
-                    <div class="header_login-btn header-btn">
-                        <a href="#">Вход</a>
-                    </div>
-                    <div class="header_case-btn header-btn">
-                        <a href="#">Пусто</a>
-                    </div>
+                    <a href="#" class="header_search-btn header-btn">
+                        <form class="popup-search popup">
+                            <input type="text" name="search" id="search" class="field-input" placeholder=" ">
+                            <label for="search" data-first="Что ищем?"></label>
+                        </form>
+                    </a>
+                    <a href="#" class="header_login-btn header-btn">Вход</a>
+                    <a href="#"  class="header_case-btn header-btn">Пусто</a>
                     <p>С 10 до 20, ежедневно<br>
                     <p><span>8 812 450-25-25</span></p>
                 </div>
@@ -60,12 +55,12 @@
                     <section class="promo-items left_item">
                         <span class="title">Малинка даром!</span>
                         <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-                        <a href="#" class="promo-btn index-btn">Хочу варенье!</a>
+                        <a href="#" class="promo-btn index-btn color-bg">Хочу варенье!</a>
                     </section>
                     <section class="promo-items right_item">
                         <span class="title">Шоколадки даром!</span>
                         <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-                        <a href="#" class="promo-btn index-btn">Хочу шоколадки!</a>
+                        <a href="#" class="promo-btn index-btn color-bg">Хочу шоколадки!</a>
                     </section>
                 </div>
                 <div class="products clearfix">
@@ -104,7 +99,7 @@
                 <div class="index-news clearfix">
                     <div class="news-items news-blog">
                         <b>Новое в нашем блоге</b>
-                        <h3><a href="#">10  способов сервировки<br>
+                        <h3><a href="#" class="white-bg">10  способов сервировки<br>
                             фруктовых щербетов<br>
                             к столу</a></h3>
                     </div>
@@ -112,9 +107,9 @@
                         <form class="mailing" action="index.html" method="post">
                             <p>Подпишитесь на нашу сладкую рассылку
                                 и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)</p>
-                            <input type="email" name="email" placeholder=" " id="email"/>
+                            <input type="email" name="email" class="field-input" placeholder=" " id="email"/>
                             <label for="email" data-first="Электронная почта"></label>
-                            <button type="submit" name="send" class="index-btn mailing-btn">Отправить</button>
+                            <button type="submit" name="send" class="index-btn mailing-btn white-bg">Отправить</button>
                         </form>
                     </div>
                 </div>
@@ -126,18 +121,22 @@
                         <p>Для заказов по телефону:<br>
                             <span class="tel">8 812 450-25-25</span><br>
                             (с 10 до 20 ежедневно)</p>
-                        <a href="#" class="index-btn feedback-btn">Форма обратной связи</a>
+                        <a href="#" class="index-btn feedback-btn white-bg">Форма обратной связи</a>
                     </div>
-                    <div class="pop-up_feedback">
-                        <p class="title">Мы обязательно вам ответим!</p>
+                    <div class="pop-up_feedback  active">
+                        <span class="title">Мы обязательно вам ответим!</span>
                         <div class="close-window"></div>
                         <form class="feedback" action="index.html" method="post" name="index-feedback">
-                            <input type="text" name="name" value="">
-                            <input type="email" name="email" value="">
-                            <textarea name="message" rows="10" cols="59"></textarea>
-                            <button type="submit" name="submit-feedback_form" class="index-btn feedback_form-btn">Отправить</button>
+                            <input type="text" name="user-name" class="field-input" id="user-name" placeholder=" ">
+                            <label for="user-name" data-first="Как вас зовут?"></label>
+                            <input type="email" name="email" class="field-input" id="mail" placeholder=" ">
+                            <label for="mail" data-first="Ваша почта для ответа?"></label>
+                            <textarea name="message" class="field-input" rows="10" cols="59" id="message" placeholder=" "></textarea>
+                            <label for="message" data-first="Напишите что-нибудь..."></label>
+                            <button type="submit" name="submit-feedback_form" class="index-btn feedback_form-btn white-bg">Отправить</button>
                         </form>
                     </div>
+                    <div class="overlay"></div>
                 </div>
             </main>
             <footer class="page-footer clearfix">
@@ -149,15 +148,16 @@
                 </div>
                 <table class="additional-info">
                     <tr>
-                        <td><a href="#"><span>Для поставщиков</span></a></td>
-                        <td>Наши документы</td>
+                        <td><a href="#"><b>Для поставщиков</b></a></td>
+                        <td><a href="#">Наши документы</a></td>
                     </tr>
                     <tr>
-                        <td>О производстве</td>
-                        <td>Экологические стандарты</td>
+                        <td><a href="#">О производстве</a></td>
+                        <td><a href="#">Экологические стандарты</a></td>
                     </tr>
                 </table>
                 <div class="developers">
+                    <a href="#"><img src="img/academy_logo.svg" alt="HTML Academy"></a>
                     <p>Сделано в <a href="#">HTML Academy</a> &copy; 2016</p>
                 </div>
             </footer>
