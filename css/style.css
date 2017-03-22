@@ -78,10 +78,8 @@ img {
     box-shadow: 0 0 0 2px #d3d3d2;
 }
 .field-input + label {
-    position: absolute;
+    position: relative;
     display: block;
-    left: 10px;
-    bottom: 37px;
     width: 0;
     height: 0;
     background-color: transparent;
@@ -93,6 +91,8 @@ img {
     content: attr(data-first);
     display: block;
     position: absolute;
+    left: 10px;
+    bottom: 8px;
     font: inherit;
     font-weight: 400;
     font-size: 16px;
@@ -102,12 +102,12 @@ img {
     transition: 0.2s ease;
 }
 .field-input:focus + label::before {
-    font-size: 11px;
+    font-size: 12px;
     color: #8fbdec;
     transform: translateY(-32px);
 }
 .field-input:not(:placeholder-shown) + label::before {
-    font-size: 11px;
+    font-size: 12px;
     color: #9a9a9a;
     transform: translateY(-32px);
 }
@@ -137,6 +137,7 @@ img {
 }
 .index-btn {
     display: inline-block;
+    box-sizing: content-box;
     padding: 10px 20px;
     font-weight: 500;
     font-size: 18px;
@@ -152,6 +153,7 @@ img {
     box-shadow: 0 2px 2px 0 rgba(172, 16, 0, 0.64);
     outline: none;
     overflow: hidden;
+    cursor: pointer;
 }
 .index-btn:hover {
     color: #ffffff;
@@ -219,11 +221,24 @@ img {
 .popup {
     display: block;
     position: absolute;
-    top: 38px;
+    top: 37px;
     right: 0;
     background-color: #f8f7f4;
     box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
     border-radius: 6px;
+    z-index: 10;
+}
+.close-popup::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    background: url(../img/slider.png) no-repeat;
+    background-position: -161px -91px;
+    cursor: pointer;
 }
 
 /*HEADER*/
@@ -232,6 +247,21 @@ img {
     width: auto;
     min-height: 70px;
     padding-top: 23px;
+}
+.page-header .field-input {
+    height: 26px;
+    font-size: 14px;
+}
+.page-header .field-input + label {
+    font-size: 14px;
+}
+.page-header .field-input + label::before {
+    left: 10px;
+    bottom: 5px;
+}
+.page-header .field-input:focus + label::before,
+.page-header .field-input:not(:placeholder-shown) + label::before {
+    transform: translateY(-26px);
 }
 .logo {
     position: absolute;
@@ -334,7 +364,6 @@ img {
     min-width: 280px;
     text-align: right;
     font-size: 0;
-    /*background-color: yellow;*/
 }
 .header-info_block p {
     margin: 5px 0;
@@ -348,19 +377,25 @@ img {
     font-size: 22px;
     line-height: 24px;
 }
-.header-btn {
+.header-btn_conteiner {
     display: inline-block;
+    position: relative;
+    margin-bottom: 13px;
+    vertical-align: middle;
+}
+.header-btn_conteiner:not(:last-child) {
+    margin-right: 10px;
+}
+.header-btn {
+    display: block;
     position: relative;
     box-sizing: border-box;
     height: 32px;
-    margin-right: 10px;
-    margin-bottom: 13px;
     padding: 5px;
     font-weight: 500;
     font-size: 14px;
     line-height: 22px;
     color: #ffffff;
-    vertical-align: middle;
     background-color: rgba(255, 255, 255, 0.2);
     border: none;
     border-radius: 15px;
@@ -393,28 +428,17 @@ img {
     background-position: -88px -18px;
 }
 .popup-search {
+    /*display: none;*/
     width: 312px;
     padding: 15px;
 }
 .popup-search .field-input {
     width: 292px;
-    height: 28px;
-    font-size: 14px;
-    line-height: 26px;
 }
-.popup-search label {
+.popup-search label::before {
     left: 25px;
     bottom: 46px;
 }
-.popup-search label::before {
-    font-size: 14px;
-    line-height: 26px;
-}
-.popup-search .field-input:focus + label::before,
-.popup-search .field-input:not(:placeholder-shown) + label::before {
-    transform: translateY(-28px);
-}
-
 .header_login-btn {
     width: 93px;
     padding-left: 42px;
@@ -426,6 +450,38 @@ img {
 }
 .header_login-btn:hover::before {
     background-position: -227px -18px;
+}
+.popup-login {
+    display: none;
+    width: 240px;
+    padding: 16px;
+    text-align: left;
+}
+.popup-login input {
+    width: 220px;
+}
+.popup-login input + label {
+    margin-bottom: 16px;
+}
+.popup-login a {
+    float: left;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+}
+.popup-login a:last-child {
+    margin-bottom: 0;
+}
+.popup-login_btn {
+    float: left;
+    width: 90px;
+    margin-right: 20px;
+    padding: 5px;
+    font-size: 15px;
+    line-height: 26px;
+    vertical-align: middle;
+    text-align: center;
 }
 .header_case-btn {
     width: 117px;
@@ -731,29 +787,28 @@ img {
     background-size: 100% 100%;
     background-position: center;
 }
-.news-mailing form {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    position: relative;
-}
 .news-mailing p {
     font-weight: 400;
     color: #5a5a5a;
 }
-.news-mailing .field-input {
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    margin-top: 21px;
-    margin-right: 10px;
-    width: 53%;
+.news-mailing form {
+    margin-top: 37px;
 }
-.news-mailing button {
-    margin-top: 21px;
+.news-mailing .field-input {
+    width: 100%;
+}
+.news-mailing table {
+    width: 100%;
+    margin: 0;
+    padding: 0
+}
+.news-mailing .input_conteiner {
+    width: auto;
+    padding-right: 30px;
+    text-align: left;
+}
+.news-mailing .button_conteiner {
+    width: 131px;
 }
 .index-location {
     position: relative;
@@ -809,6 +864,7 @@ img {
 }
 .pop-up_feedback {
     display: block;
+    visibility: collapse;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -816,7 +872,6 @@ img {
     -ms-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
     width: 430px;
-    /*min-height: 440px;*/
     padding: 16px 24px;
     background-color: #f8f7f4;
     border-radius: 15px;
@@ -831,20 +886,8 @@ img {
     line-height: 32px;
     color: #343434;
 }
-.pop-up_feedback .field-input {
+.pop-up_feedback .field-input + label {
     margin-bottom: 22px;
-}
-.pop-up_feedback input + label {
-    left: auto;
-    bottom: auto;
-    margin-top: -56px;
-    margin-left: 20px;
-}
-.pop-up_feedback textarea + label {
-    left: auto;
-    bottom: auto;
-    margin-top: -171px;
-    margin-left: 20px;
 }
 .pop-up_feedback input[type="text"],
  .pop-up_feedback input[type="email"] {
@@ -855,6 +898,10 @@ img {
     width: 388px;
     height: 132px;
     padding: 10px 20px;
+}
+.pop-up_feedback textarea + label::before {
+    left: 20px;
+    bottom: 124px;
 }
 .feedback_form-btn {
     display: block;

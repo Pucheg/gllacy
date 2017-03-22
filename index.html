@@ -30,14 +30,28 @@
                     </ul>
                 </nav>
                 <div class="header-info_block">
-                    <a href="#" class="header_search-btn header-btn">
+                    <div class="header-btn_conteiner">
+                        <a href="#" class="header_search-btn header-btn"></a>
                         <form class="popup-search popup">
                             <input type="text" name="search" id="search" class="field-input" placeholder=" ">
                             <label for="search" data-first="Что ищем?"></label>
                         </form>
-                    </a>
-                    <a href="#" class="header_login-btn header-btn">Вход</a>
-                    <a href="#"  class="header_case-btn header-btn">Пусто</a>
+                    </div>
+                    <div class="header-btn_conteiner">
+                        <a href="#" class="header_login-btn header-btn">Вход</a>
+                        <form class="popup-login popup clearfix">
+                            <input type="email" name="email" class="field-input" id="login-mail" placeholder=" " required>
+                            <label for="login-mail" data-first="Электронная почта"></label>
+                            <input type="password" name="password" class="field-input" id="login-password" placeholder=" " required>
+                            <label for="login-password" data-first="Пароль"></label>
+                            <button type="submit" class="index-btn white-bg popup-login_btn" name="submit_user-login-data">Войти</button>
+                            <a href="#" class="white-bg">Забыли пароль?</a>
+                            <a href="#" class="white-bg">Новая регистрация</a>
+                        </form>
+                    </div>
+                    <div class="header-btn_conteiner">
+                        <a href="#"  class="header_case-btn header-btn">Пусто</a>
+                    </div>
                     <p>С 10 до 20, ежедневно<br>
                     <p><span>8 812 450-25-25</span></p>
                 </div>
@@ -104,12 +118,20 @@
                             к столу</a></h3>
                     </div>
                     <div class="news-items news-mailing">
+                        <p>Подпишитесь на нашу сладкую рассылку
+                            и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)</p>
                         <form class="mailing" action="index.html" method="post">
-                            <p>Подпишитесь на нашу сладкую рассылку
-                                и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой не нужной ерунды. Честно =)</p>
-                            <input type="email" name="email" class="field-input" placeholder=" " id="email"/>
-                            <label for="email" data-first="Электронная почта"></label>
-                            <button type="submit" name="send" class="index-btn mailing-btn white-bg">Отправить</button>
+                            <table>
+                                <tr>
+                                    <td class="input_conteiner">
+                                        <input type="email" name="email" class="field-input" placeholder=" " id="email"/>
+                                        <label for="email" data-first="Электронная почта"></label>
+                                    </td>
+                                    <td class="button_conteiner">
+                                        <button type="submit" name="send" class="index-btn mailing-btn white-bg">Отправить</button>
+                                    </td>
+                                </tr>
+                            </table>
                         </form>
                     </div>
                 </div>
@@ -123,9 +145,8 @@
                             (с 10 до 20 ежедневно)</p>
                         <a href="#" class="index-btn feedback-btn white-bg">Форма обратной связи</a>
                     </div>
-                    <div class="pop-up_feedback  active">
+                    <div class="pop-up_feedback close-popup">
                         <span class="title">Мы обязательно вам ответим!</span>
-                        <div class="close-window"></div>
                         <form class="feedback" action="index.html" method="post" name="index-feedback">
                             <input type="text" name="user-name" class="field-input" id="user-name" placeholder=" ">
                             <label for="user-name" data-first="Как вас зовут?"></label>
