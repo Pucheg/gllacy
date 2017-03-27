@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html  lang="ru">
     <head>
-        <meta charset="utf-8" lang="ru">
+        <meta charset="utf-8">
         <title>Gllacy Shop</title>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
@@ -51,6 +51,31 @@
                     </div>
                     <div class="header-btn_conteiner">
                         <a href="#"  class="header_case-btn header-btn">Пусто</a>
+                        <div class="case-popup popup">
+                            <table>
+                                <tr class="case-popup_item">
+                                    <td class="del-item"><button type="button" name="del-item_btn" class="del-item_btn"></button></td>
+                                    <td class="image-item"><a href="#"><img src="img/product_1.jpg" alt="product-image" width="33" height="33"></a></td>
+                                    <td class="description-item">Пломбир с апельсиновым джемом</td>
+                                    <td class="weight-item">1,5 кг</td>
+                                    <td class="price-item">х 200 руб.</td>
+                                    <td class="cost-item">300 руб.</td>
+                                </tr>
+                                <tr class="case-popup_item">
+                                    <td class="del-item"><button type="button" name="del-item_btn" class="del-item_btn"></button></td>
+                                    <td class="image-item"><a href="#"><img src="img/product_3.jpg" alt="product-image" width="33" height="33"></a></td>
+                                    <td class="description-item">Клубничный пломбир с присыпкой
+из белого шоколада</td>
+                                    <td class="weight-item">1,5 кг</td>
+                                    <td class="price-item">х 300 руб.</td>
+                                    <td class="cost-item">450 руб.</td>
+                                </tr>
+                                <tr class="case-popup_item">
+                                    <td class="total-cost-item"  colspan="6">Итого: 750 руб.</td>
+                                </tr>
+                            </table>
+                            <a href="#" class="case-popup_btn-buy index-btn white-bg">Оформить заказ</a>
+                        </div>
                     </div>
                     <p>С 10 до 20, ежедневно<br>
                     <p><span>8 812 450-25-25</span></p>
@@ -89,7 +114,7 @@
                         <a href="#">Сливочно-кофейное с кусочками шоколада</a>
                     </section>
                     <section class="products-items hit">
-                        <img src="img/product_3.jpg" width="267" height="267" width="267" height="267" alt="image product">
+                        <img src="img/product_3.jpg" width="267" height="267" alt="image product">
                         <p class="product-price">355<span class="icon-Р"> Р.</span><small>/кг</small></p>
                         <a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
                     </section>
@@ -124,7 +149,7 @@
                             <table>
                                 <tr>
                                     <td class="input_conteiner">
-                                        <input type="email" name="email" class="field-input" placeholder=" " id="email"/>
+                                        <input type="email" name="email" class="field-input" placeholder=" " id="email" required>
                                         <label for="email" data-first="Электронная почта"></label>
                                     </td>
                                     <td class="button_conteiner">
@@ -138,14 +163,15 @@
                 <div class="index-location">
                     <img src="img/map.jpg" alt="road-map" width="900" height="430">
                     <div class="index-contacts">
-                        <p>Адрес главного офиса и офлайн магазина:<br>
+                        <p>Адрес главного офиса и офлайн магазина:
                             <span>ул. Большая Конюшенная 19/8, Санкт-Петербург</span></p>
-                        <p>Для заказов по телефону:<br>
-                            <span class="tel">8 812 450-25-25</span><br>
+                        <p>Для заказов по телефону:
+                            <span class="tel">8 812 450-25-25</span>
                             (с 10 до 20 ежедневно)</p>
                         <a href="#" class="index-btn feedback-btn white-bg">Форма обратной связи</a>
                     </div>
-                    <div class="pop-up_feedback close-popup">
+                    <div class="pop-up_feedback">
+                        <button type="button" class="close-popup" name="close-popup"></button>
                         <span class="title">Мы обязательно вам ответим!</span>
                         <form class="feedback" action="index.html" method="post" name="index-feedback">
                             <input type="text" name="user-name" class="field-input" id="user-name" placeholder=" ">
