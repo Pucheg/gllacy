@@ -228,9 +228,7 @@ img {
     border-radius: 6px;
     z-index: 10;
 }
-.close-popup::after {
-    content: "";
-    display: block;
+.close-popup{
     position: absolute;
     top: 16px;
     right: 16px;
@@ -239,6 +237,18 @@ img {
     background: url(../img/slider.png) no-repeat;
     background-position: -161px -91px;
     cursor: pointer;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 15;
 }
 
 /*HEADER*/
@@ -386,6 +396,15 @@ img {
 .header-btn_conteiner:not(:last-child) {
     margin-right: 10px;
 }
+.header-btn_conteiner::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 5%;
+    right: 5%;
+    height: 5px;
+}
 .header-btn {
     display: block;
     position: relative;
@@ -428,7 +447,7 @@ img {
     background-position: -88px -18px;
 }
 .popup-search {
-    /*display: none;*/
+    display: none;
     width: 312px;
     padding: 15px;
 }
@@ -509,6 +528,104 @@ img {
 }
 .header_case-btn:hover {
     font-size: 0;
+}
+.case-popup {
+    display: block;
+    position: absolute;
+    width: 515px;
+    padding: 17px 15px 56px 10px;
+    font: inherit;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #333333;
+    background-color: #f8f7f4;
+    z-index: 10;
+}
+.case-popup > table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.case-popup_item a {
+    border: none;
+    font-size: 0;
+}
+.case-popup_item td {
+    padding: 18px 2px;
+    text-align: left;
+    vertical-align: top;
+}
+.case-popup_item .del-item {
+    width: 26px;
+    padding: 0;
+}
+.case-popup_item .del-item_btn {
+    display: block;
+    position: relative;
+    top: 15px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-size: 0;
+    background: transparent url(../img/slider.png) no-repeat;
+    background-position: -92px -49px;
+    background-size: 162px;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+.case-popup_item .image-item {
+    width: 38px;
+    padding: 2px 5px;
+    padding-top: 8px;
+}
+.case-popup_item img {
+    width: 33px;
+    height: auto;
+    border-radius: 50%;
+}
+.case-popup_item .description-item {
+    width: 232px;
+}
+.case-popup_item .weight-item {
+    width: 44px;
+    text-align: right;
+}
+.case-popup_item .price-item {
+    width: 65px;
+    text-align: left;
+    color: #808080;
+}
+.case-popup_item .cost-item {
+    width: auto;
+    text-align: center;
+}
+.case-popup_item .total-cost-item {
+    padding: 14px 13px;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: right;
+}
+.case-popup_item .total-cost-item::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 102px;
+    height: 1px;
+    background-color: #cacac7;
+
+}
+.case-popup .case-popup_btn-buy {
+    display: block;
+    position: absolute;
+    right: 16px;
+    bottom: 20px;
+    padding: 5px 22px;
+    font-weight: 400;
+    font-size: 15px;
 }
 .header-breadcrumbs {
     margin-top: 77px;
@@ -597,9 +714,10 @@ img {
     box-sizing: border-box;
     position: relative;
     width: 48.83%;
-    height: 230px;
+    min-height: 230px;
     min-width: 419px;
     padding: 15px 20px;
+    padding-bottom: 85px;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -623,10 +741,13 @@ img {
     float: left;
     margin-right: 20px;
     background: url(../img/banner1.jpg) no-repeat;
+    background-size: cover;
 }
+
 .promo-items.right_item {
     float: right;
     background: url(../img/banner2.jpg) no-repeat;
+    background-size: cover;
 }
 .products {
     display: flex;
@@ -685,7 +806,8 @@ img {
     left: 1px;
     width: 61px;
     height: 61px;
-    background-image: url(../img/HIT.jpg);
+    background-image: url(../img/slider.png);
+    background-position: -210px -69px;
     border-radius: 50%;
 }
 .index-advantage {
@@ -782,7 +904,9 @@ img {
 }
 .news-mailing {
     float: right;
+    position: relative;
     padding: 19px 24px;
+    padding-bottom: 90px;
     background: #f8f7f4 url(../img/mailing_bg.jpg) no-repeat;
     background-size: 100% 100%;
     background-position: center;
@@ -792,7 +916,10 @@ img {
     color: #5a5a5a;
 }
 .news-mailing form {
-    margin-top: 37px;
+    position: absolute;
+    left: 19px;
+    right: 19px;
+    bottom: 35px;
 }
 .news-mailing .field-input {
     width: 100%;
@@ -835,7 +962,7 @@ img {
     right: 2.223%;
     width: 250px;
     padding: 15px 25px;
-    padding-bottom: 30px;
+    padding-bottom: 80px;
     border-radius: 15px;
     background-color: #ffffff;
 }
@@ -848,6 +975,7 @@ img {
     color: #343434;
 }
 .index-contacts span {
+    display: block;
     font: inherit;
     font-weight: 700;
     font-size: 18px;
@@ -855,12 +983,14 @@ img {
     color: #343434;
 }
 .index-contacts .tel {
-    margin-top: 10px;
     line-height: 28px;
 }
 .feedback-btn {
-    width: 83%;
-    margin-bottom: 4px;
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    bottom: 30px;
+    padding: 10px 0;
 }
 .pop-up_feedback {
     display: block;
@@ -873,6 +1003,7 @@ img {
     transform: translate(-50%,-50%);
     width: 430px;
     padding: 16px 24px;
+    padding-bottom: 97px;
     background-color: #f8f7f4;
     border-radius: 15px;
     z-index: 20;
@@ -886,7 +1017,7 @@ img {
     line-height: 32px;
     color: #343434;
 }
-.pop-up_feedback .field-input + label {
+.pop-up_feedback .field-input + label:not(:last-of-type) {
     margin-bottom: 22px;
 }
 .pop-up_feedback input[type="text"],
@@ -905,17 +1036,12 @@ img {
 }
 .feedback_form-btn {
     display: block;
-    margin-left: auto;
-    margin-bottom: 10px;
+    position: absolute;
+    right: 24px;
+    bottom: 27px;
 }
 .pop-up_feedback.active + .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
-    z-index: 15;
 }
 .page-footer {
     display: flex;
