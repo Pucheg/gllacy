@@ -226,7 +226,7 @@ img {
     background-color: #f8f7f4;
     box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
     border-radius: 6px;
-    z-index: 10;
+    z-index: 25;
 }
 .close-popup{
     position: absolute;
@@ -240,9 +240,9 @@ img {
     border: none;
     box-shadow: none;
     outline: none;
-<<<<<<< HEAD
 }
 .overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -250,8 +250,6 @@ img {
     height: 100%;
     background-color: transparent;
     z-index: 15;
-=======
->>>>>>> origin/master
 }
 
 /*HEADER*/
@@ -535,28 +533,17 @@ img {
 .case-popup {
     display: block;
     position: absolute;
-<<<<<<< HEAD
     width: 515px;
     padding: 17px 15px 56px 10px;
     font: inherit;
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
-=======
-    width: 510px;
-    padding: 20px 15px;
-    padding-bottom: 170px;
-    font: inherit;
-    font-weight: 400;
-    font-size: 13px;
->>>>>>> origin/master
     color: #333333;
     background-color: #f8f7f4;
-    z-index: 10;
 }
 .case-popup > table {
     width: 100%;
-<<<<<<< HEAD
     border-collapse: collapse;
 }
 .case-popup_item a {
@@ -584,37 +571,12 @@ img {
     background: transparent url(../img/slider.png) no-repeat;
     background-position: -92px -49px;
     background-size: 162px;
-=======
-    padding-right: 10px;
-    background-color: aquamarine;
-}
-.case-popup_item a {
-    border: none;
-}
-.case-popup_item td {
-    /*padding: 5px;*/
-    text-align: left;
-    vertical-align: middle;
-}
-.case-popup_item .del-item {
-    width: 23px;
-}
-.case-popup_item .del-item_btn {
-    /*display: block;*/
-    width: 15px;
-    height: 15px;
-    padding: 0;
-    background: transparent url(../img/slider.png) no-repeat;
-    background-position: -89px -50px;
-    background-size: 151px;
->>>>>>> origin/master
     cursor: pointer;
     border: none;
     box-shadow: none;
     outline: none;
 }
 .case-popup_item .image-item {
-<<<<<<< HEAD
     width: 38px;
     padding: 2px 5px;
     padding-top: 8px;
@@ -642,38 +604,10 @@ img {
 }
 .case-popup_item .total-cost-item {
     padding: 14px 13px;
-=======
-    width: 40px;
-}
-.case-popup_item img {
-    width: 33px;
-    height: 33px;
-    border-radius: 50%;
-}
-.case-popup_item .description-item {
-    width: 235px;
-}
-.case-popup_item .weight-item {
-    width: 50px;
-    padding-right: 0;
-    text-align: right;
-}
-.case-popup_item .price-item {
-    width: 75px;
-    padding-left: 0;
-    color: #808080;
-}
-.case-popup_item .cost-item {
-    width: 60px;
-    text-align: center;
-}
-.case-popup_item .total-cost-item {
->>>>>>> origin/master
     font-weight: 700;
     font-size: 15px;
     text-align: right;
 }
-<<<<<<< HEAD
 .case-popup_item .total-cost-item::after {
     content: "";
     position: absolute;
@@ -693,9 +627,6 @@ img {
     font-weight: 400;
     font-size: 15px;
 }
-=======
-
->>>>>>> origin/master
 .header-breadcrumbs {
     margin-top: 77px;
     margin-right: auto;
@@ -1075,7 +1006,6 @@ img {
     padding-bottom: 97px;
     background-color: #f8f7f4;
     border-radius: 15px;
-    z-index: 20;
 }
 .pop-up_feedback .title {
     display: block;
