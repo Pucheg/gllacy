@@ -30,16 +30,16 @@
                     </ul>
                 </nav>
                 <div class="header-info_block">
-                    <div class="header-btn_conteiner">
+                    <div class="header-btn_conteiner show-popup">
                         <a href="#" class="header_search-btn header-btn"></a>
                         <form class="popup-search popup">
                             <input type="text" name="search" id="search" class="field-input" placeholder=" ">
                             <label for="search" data-first="Что ищем?"></label>
                         </form>
-                        <div class="overlay"></div>
+                        <div class="overlay click-js"></div>
                     </div>
-                    <div class="header-btn_conteiner">
-                        <a href="#" class="header_login-btn header-btn">Вход</a>
+                    <div class="header-btn_conteiner show-popup">
+                        <a href="#" class="header_login-btn header-btn click-js">Вход</a>
                         <form class="popup-login popup clearfix">
                             <input type="email" name="email" class="field-input" id="login-mail" placeholder=" " required>
                             <label for="login-mail" data-first="Электронная почта"></label>
@@ -51,7 +51,7 @@
                         </form>
                         <div class="overlay"></div>
                     </div>
-                    <div class="header-btn_conteiner">
+                    <div class="header-btn_conteiner show-popup">
                         <a href="#"  class="header_case-btn header-btn">Пусто</a>
                         <div class="case-popup popup">
                             <table>
@@ -110,21 +110,33 @@
                         <img src="img/product_1.jpg" width="267" height="267" alt="image product">
                         <p class="product-price">310<span class="icon-Р"> Р.</span><small>/кг</small></p>
                         <a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+                        <div class="products-items_action">
+                            <a href="#" class="action-btn index-btn white-bg">Быстрый просмотр</a>
+                        </div>
                     </section>
                     <section class="products-items hit">
                         <img src="img/product_2.jpg" width="267" height="267" alt="image product">
                         <p class="product-price">380<span class="icon-Р"> Р.</span><small>/кг</small></p>
                         <a href="#">Сливочно-кофейное с кусочками шоколада</a>
+                        <div class="products-items_action">
+                            <a href="#" class="action-btn index-btn white-bg">Быстрый просмотр</a>
+                        </div>
                     </section>
                     <section class="products-items hit">
                         <img src="img/product_3.jpg" width="267" height="267" alt="image product">
                         <p class="product-price">355<span class="icon-Р"> Р.</span><small>/кг</small></p>
                         <a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
+                        <div class="products-items_action">
+                            <a href="#" class="action-btn index-btn white-bg">Быстрый просмотр</a>
+                        </div>
                     </section>
                     <section class="products-items hit">
                         <img src="img/product_4.jpg" width="267" height="267" alt="image product">
                         <p class="product-price">415<span class="icon-Р"> Р.</span><small>/кг</small></p>
                         <a href="#">Сливочное крем-брюле с карамельной подливкой</a>
+                        <div class="products-items_action">
+                            <a href="#" class="action-btn index-btn white-bg">Быстрый просмотр</a>
+                        </div>
                     </section>
                 </div>
                 <section class="index-advantage clearfix">
@@ -163,8 +175,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="index-location">
-                    <img src="img/map.jpg" alt="road-map" width="900" height="430">
+                <div class="index-location" id="map">
                     <div class="index-contacts">
                         <p>Адрес главного офиса и офлайн магазина:
                             <span>ул. Большая Конюшенная 19/8, Санкт-Петербург</span></p>
@@ -173,7 +184,7 @@
                             (с 10 до 20 ежедневно)</p>
                         <a href="#" class="index-btn feedback-btn white-bg">Форма обратной связи</a>
                     </div>
-                    <div class="pop-up_feedback">
+                    <div class="pop-up_feedback popup">
                         <button type="button" class="close-popup" name="close-popup"></button>
                         <span class="title">Мы обязательно вам ответим!</span>
                         <form class="feedback" action="index.html" method="post" name="index-feedback">
@@ -212,5 +223,7 @@
                 </div>
             </footer>
         </div>
+        <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>
