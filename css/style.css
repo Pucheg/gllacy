@@ -228,7 +228,7 @@ img {
     border-radius: 6px;
     opacity: 0;
     z-index: -2;
-    transition: 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 .close-popup{
     position: absolute;
@@ -1044,9 +1044,9 @@ img {
     bottom: 30px;
     padding: 10px 0;
 }
+
 .pop-up_feedback {
-    display: block;
-    visibility: collapse;
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -1058,6 +1058,12 @@ img {
     padding-bottom: 97px;
     background-color: #f8f7f4;
     border-radius: 15px;
+}
+.pop-up_feedback.show-modal {
+    animation: emerging_window 0.3s both;
+}
+.pop-up_feedback.modal-error {
+animation: shake_feed 0.5s;
 }
 .pop-up_feedback .title {
     display: block;
@@ -1189,4 +1195,17 @@ img {
 .developers p > a {
     display: inline-block;
     font: inherit;
+}
+
+@keyframes emerging_window {
+0% { transform: translate(-50%, -35%);
+    opacity: 0;
+}
+100% { transform: translateY(-50%, -50%);
+    opacity: 1;}
+}
+@keyframes shake_feed {
+0%, 100% { transform: translate(-50%, -50%); }
+10%, 30%, 50%, 70%, 90% { transform: translate(-50.2%, -50%);}
+20%, 40%, 60%, 80% { transform: translate(-49.8%, -50%); }
 }
