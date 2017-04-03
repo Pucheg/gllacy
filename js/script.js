@@ -7,6 +7,7 @@ var feed_form = feed_modal.querySelector("form");
 var feed_login = feed_modal.querySelector(".feedback [name=user-name]");
 feed_mail = feed_modal.querySelector(".feedback [name=email]");
 var index_banner = document.querySelector(".page-bg");
+ var toggle_banner =         document.querySelectorAll(".slide-toggle_item");
 
 feed_open.addEventListener("click", function(event){
     event.preventDefault();
@@ -37,9 +38,20 @@ feed_form.addEventListener("submit", function(event) {
     }
 });
 
-
-
-
+banner_toggle=function() {
+    var num = this.dataset.numb;
+    for (var i = 0; i < toggle_banner.length; i++) {
+        toggle_banner[i].classList.remove("current");
+        var del_num = i + 1;
+        index_banner.classList.remove("slide" + del_num);
+    }
+    this.classList.add("current");
+    index_banner.classList.add("slide" + num);
+    }
+for (var i = 0; i < toggle_banner.length; i++){
+    toggle_banner[i].setAttribute('data-numb', i+1);
+    toggle_banner[i].addEventListener('click', banner_toggle);
+}
 
 (function () {
 

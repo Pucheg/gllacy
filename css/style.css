@@ -218,6 +218,10 @@ img {
 .page-bg.slide3 {
     background-image: url(../img/Page_bg3-t.jpg);
 }
+/*.page-bg[class*="slide1"] {
+    background-image: none;
+    background-color: red;
+}*/
 .popup {
     display: block;
     position: absolute;
@@ -649,6 +653,7 @@ img {
     margin-top: 77px;
     margin-right: auto;
 }
+
 /*MAIN*/
 .index-slider {
     position: relative;
