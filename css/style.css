@@ -214,14 +214,13 @@ img {
 }
 .page-bg.slide2 {
     background-image: url(../img/Page_bg2-t.jpg);
+    background-color: #8996a6;
 }
 .page-bg.slide3 {
     background-image: url(../img/Page_bg3-t.jpg);
+    background-color: #9d8b84;
 }
-/*.page-bg[class*="slide1"] {
-    background-image: none;
-    background-color: red;
-}*/
+
 .popup {
     display: block;
     position: absolute;
@@ -299,6 +298,9 @@ img {
     left: -8px;
     color: #ffffff;
 }
+.logo a {
+    border: none;
+}
 .logo img {
     width: 155px;
     height: 63px;
@@ -338,8 +340,17 @@ img {
     right: 10px;
     height: 5px;
 }
+.header-menu_item.current {
+    color: #ffffff;
+    background-color: #d07058;
+}
+.header-menu_item.current a {
+    border: none;
+}
 .header-menu_item:hover .catalog-inner_menu {
     visibility: visible;
+    opacity: 1;
+    transform: scaleY(1);
     }
 .inner-menu {
     visibility: hidden;
@@ -359,7 +370,10 @@ img {
     box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
     overflow: hidden;
     z-index: 5;
-    transition-delay: 0.1s;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    transition: 0.2s ease 0.1s;
 }
 .inner-menu_item {
     position: relative;
@@ -653,6 +667,25 @@ img {
     margin-top: 77px;
     margin-right: auto;
 }
+.header-breadcrumbs a {
+    display: inline-block;
+    margin-right: 17px;
+    font: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+}
+.header-breadcrumbs a:last-of-type {
+    border: none;
+}
+.header-breadcrumbs a::after {
+    content: "»";
+    position: absolute;
+    padding-left: 7px;
+}
+.header-breadcrumbs a:last-child::after {
+    content: none;
+}
 
 /*MAIN*/
 .index-slider {
@@ -696,27 +729,93 @@ img {
     font-size: 32px;
     line-height: 40px;
 }
+.catalog-main h1 {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 41px;
+}
 .catalog-filters {
     width: 860px;
     margin-bottom: 40px;
-    background-color: orange;
 }
 .filters-item {
+    display: block;
     float: left;
+    margin: 0;
     margin-right: 15px;
-    background-color: yellow;
+    padding: 0;
+    border: none;
+}
+.filters-item p {
+    margin: 0;
+    margin-left: 16px;
+    font-weight: 500;
+    font-size: 14px;
 }
 .filters-container {
-    height: 36px;
-    vertical-align: center;
+    position: relative;
+    height: 29px;
+    padding-top: 7px;
+    padding-left: 16px;
+    vertical-align: middle;
     border-radius: 30px;
-    background-color: red;
+    background-color: #b5c4ba;
+    background-color: rgba(248, 247, 244, 0.2);
 }
 .filters-sorting {
     width: 195px;
 }
+.sort-conteiner {
+    height: 36px;
+    padding: 0;
+}
+.filters-sorting select {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    padding-bottom: 3px;
+    font: inherit;
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.filters-sorting option,
+ .filters-sorting select:hover,
+.filters-sorting select:focus {
+    color: #343434;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.filters-sorting .appearance {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border: 5px solid #ffffff;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom: none;
+}
+.filters-sorting select:hover + .appearance,
+.filters-sorting select:focus + .appearance {
+    border-top-color: #333333;
+}
+
 .filters-price {
-    width: 220px;
+    width: 215px;
 }
 .filters-fat {
     width: 414px;
@@ -776,7 +875,6 @@ img {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 36px;
     width: auto;
 }
 .products-items {
@@ -785,6 +883,7 @@ img {
     width: 23.286%;
     min-width: 200px;
     margin-right: 2.267%;
+    margin-bottom: 36px;
     text-align: center;
     z-index: 3;
 }
@@ -801,7 +900,7 @@ img {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
     box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.3);
-    z-index: -1;
+    z-index: 1;
     opacity: 0;
     visibility: collapse;
     transition: 0.3s ease;
@@ -812,6 +911,9 @@ img {
     right: 16px;
     bottom: 22px;
     padding: 6px 0;
+}
+.products-items:hover {
+    z-index: 10;
 }
 .products-items:hover .products-items_action {
     display: block;
@@ -1105,12 +1207,22 @@ animation: shake_feed 0.5s;
 .pop-up_feedback.show-modal + .overlay {
     background-color: rgba(0, 0, 0, 0.3);
 }
+
+/*FOOTER*/
 .page-footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
     min-height: 100px;
+}
+.page-footer hr {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 0;
+    padding: 0;
+    opacity: 0.3;
 }
 .social-btn {
     float: left;
@@ -1200,6 +1312,54 @@ animation: shake_feed 0.5s;
 .developers p > a {
     display: inline-block;
     font: inherit;
+}
+.switch-pages {
+    float: right;
+    vertical-align: baseline;
+    margin-bottom: 28px;
+}
+.switch-pages ul {
+    display: inline-block;
+    margin-left: 16px;
+    margin-right: 13px;
+}
+.switch-pages li {
+    margin-right: 3px;
+}
+.switch-pages a {
+    width: 23px;
+    height: 23px;
+    padding-top: 2px;
+    padding-right: 2px;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    color: #ffffff;
+    border-radius: 50%;
+    border: none;
+}
+.switch-pages a:hover {
+    background-color: #9db1a5;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.switch-pages a.current {
+    color: #353535;
+    background-color: #ffffff;
+}
+.switch-tab {
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    transform: rotate(45deg);
+}
+.switch-tab.prev {
+    transform: rotate(-135deg);
+    opacity: 0.2;
 }
 
 @keyframes emerging_window {
