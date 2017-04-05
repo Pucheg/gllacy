@@ -5,9 +5,10 @@ var feed_modal = document.querySelector(".pop-up_feedback");
 var feed_close = feed_modal.querySelector(".close-popup");
 var feed_form = feed_modal.querySelector("form");
 var feed_login = feed_modal.querySelector(".feedback [name=user-name]");
-feed_mail = feed_modal.querySelector(".feedback [name=email]");
+var feed_mail = feed_modal.querySelector(".feedback [name=email]");
+var overlay = document.querySelector(".feed-overlay");
 var index_banner = document.querySelector(".page-bg");
- var toggle_banner =         document.querySelectorAll(".slide-toggle_item");
+var toggle_banner = document.querySelectorAll(".slide-toggle_item");
 
 feed_open.addEventListener("click", function(event){
     event.preventDefault();
@@ -18,6 +19,14 @@ feed_open.addEventListener("click", function(event){
 feed_close.addEventListener("click", function(event){
     event.preventDefault();
     feed_modal.classList.remove("show-modal");
+    if (feed_modal.classList.contains("modal-error")) {
+        feed_modal.classList.remove("modal-error");}
+});
+
+overlay.addEventListener("click", function(event){
+    event.preventDefault();
+    if (feed_modal.classList.contains("show-modal")) {
+        feed_modal.classList.remove("show-modal");}
     if (feed_modal.classList.contains("modal-error")) {
         feed_modal.classList.remove("modal-error");}
 });
