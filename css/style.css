@@ -205,11 +205,11 @@ img {
     min-width: 900px;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #8a9c8f;
     background-position: center top;
     background-repeat: no-repeat;
 }
 .page-bg.slide1 {
+    background-color: #849d8f;
     background-image: url(../img/Page_bg1-t.jpg);
 }
 .page-bg.slide2 {

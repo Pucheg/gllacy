@@ -62,7 +62,7 @@ for (var i = 0; i < toggle_banner.length; i++){
     toggle_banner[i].addEventListener('click', banner_toggle);
 }
 
-(function () {
+// (function () {
 
   ymaps.ready(init);
   var myMap;
@@ -80,11 +80,11 @@ for (var i = 0; i < toggle_banner.length; i++){
       hintContent: 'г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8',
     }, {
       iconLayout: 'default#image',
-      iconImageHref: './img/map_marker.png',
+      iconImageHref: '..img/map_marker.png',
       iconImageSize: [218, 142],
       iconImageOffset: [-38, -125]
     });
 
     myMap.geoObjects.add(myPlacemark);
   }
-  })();
+  // })();
