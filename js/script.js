@@ -62,8 +62,7 @@ for (var i = 0; i < toggle_banner.length; i++){
     toggle_banner[i].addEventListener('click', banner_toggle);
 }
 
-// (function () {
-
+// YANDEX MAP
   ymaps.ready(init);
   var myMap;
 
@@ -87,4 +86,3 @@ for (var i = 0; i < toggle_banner.length; i++){
 
     myMap.geoObjects.add(myPlacemark);
   }
-  // })();
