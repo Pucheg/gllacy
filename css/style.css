@@ -29,7 +29,7 @@ a:hover {
 }
 a:active {
     color: #ffbc9e;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    /*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);*/
     border-bottom-color: rgba(255, 188, 158, 0.3);
 }
 a.white-bg {
@@ -205,6 +205,7 @@ img {
     min-width: 900px;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: #849d8f;
     background-position: center top;
     background-repeat: no-repeat;
 }
@@ -311,7 +312,7 @@ img {
     margin-left: 161px;
 }
 .header-menu_item {
-    padding: 5px 14px;
+    padding: 6px 15px;
     border-radius: 15px;
     transition: 0.2s;
 }
@@ -325,7 +326,7 @@ img {
 }
 .header-menu_item > a {
     color: inherit;
-    line-height: 19px;
+    line-height: 20px;
 }
 .header-menu_item:hover > a,
 .header-menu_item:active > a {
@@ -357,7 +358,7 @@ img {
     visibility: hidden;
     position: absolute;
     top: 37px;
-    left: 0;
+    left: -5px;
     min-width: 143px;
     margin: 0;
     padding: 0;
@@ -378,16 +379,19 @@ img {
 }
 .inner-menu_item {
     position: relative;
-    padding: 7px 15px;
+    padding: 3px 0;
 }
+
 .inner-menu a {
     padding: 5px;
+    padding-left: 20px;
     font: inherit;
     color: inherit;
     border-bottom: none;
 }
- .inner-menu_title {
-    padding: 10px 15px;
+ .inner-menu_title a {
+    /*padding: 10px;
+    padding-left: 20px;*/
     font-weight: 700;
 }
 .inner-menu_title::after {
@@ -398,11 +402,14 @@ img {
     width: 89.51%;
     border-bottom: 1px solid #d1d0ce;
 }
-.inner-menu_item:hover {
+.inner-menu_item:hover a {
     background-color: #fbded7;
 }
-.inner-menu_item:active {
+.inner-menu_item:active a {
     background-color: #f6b5a5;
+}
+.inner-menu_item.current a {
+    background-color: #d07058;
 }
 .header-info_block {
     float: right;
@@ -855,6 +862,10 @@ img {
     background-color: #f8f7f4;
     border-radius: 50%;
     cursor: pointer;
+    z-index: 2;
+}
+.price-marker:hover {
+    box-shadow: 0 0 0 1px #ffffff;
 }
 .price-marker_left {
     left: 20px;
@@ -956,6 +967,7 @@ label::after {
     background-color: rgba(255, 255, 255, 0.2);
     border: 2px solid #ffffff;
     border-radius: 18px;
+    transition: 0.2s ease;
 }
 .catalog-filters_btn:hover {
     color: #363636;
